@@ -1,0 +1,21 @@
+.new-tweet {
+  background-color: #eee;
+  padding: 0.7em;
+  border-radius: 7px;
+}
+
+h2 {
+  text-decoration: underline;
+  margin-top: 0;
+  margin-bottom: 0.7em;
+}
+
+textarea {
+  width: 100%;
+  padding: 7px;
+}
+
+span {
+  margin-top: 5px;
+  float: right;
+}

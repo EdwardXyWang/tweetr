@@ -18,8 +18,81 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  margin: 80px auto auto auto;
+  width: 450px;
+  background-color: white;
+  padding: 2.5em 2em 6em 2em;
+}
+
+#tweetsContainer {
+  margin-top: 7px;
+}
+
+#tweetsContainer article{
+  height: 210px;
+  border: 1px solid #eee;
+  border-radius: 7px;
+}
+
+#tweetsContainer article header {
+  padding: 7px;
+  height: 33%;
+  background-color: #f7f7f7;
+}
+
+#tweetsContainer article header .avatar {
+  float: left;
+}
+
+#tweetsContainer article header .userName {
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-left: 10px;
+  font-size: 1.5em;
+}
+
+#tweetsContainer article header .handle {
+  float: right;
+  padding-top: 7px;
+}
+
+#tweetsContainer article .content{
+  height: 50%;
+  word-wrap: break-word;
+  padding-top: 27px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#tweetsContainer article footer {
+  border-top: 1px solid #eee;
+  height: 17%;
+  line-height: 20px;
+  padding: 7px;
+  font-size: 0.7em;
+}
+
+#tweetsContainer article footer .fa-retweet {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.fa {
+  color: #fff;
+}
+
+#tweetsContainer article:hover .fa {
+  color: #f0f;
+}
+
+
+
