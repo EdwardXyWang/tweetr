@@ -87,6 +87,8 @@ $(function () {
     $(this).closest('#nav-bar').siblings('.container').find('.new-tweet').slideToggle();
     $(this).closest('#nav-bar').siblings('.container').find('.new-tweet form textarea').focus();
   });
+
+  // left top corner animation
   $('#nav-bar .logo').on('click', function () {
     $(this).css('display', 'none');
     $(this).siblings('#gifLogo').css('display', 'block');
