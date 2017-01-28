@@ -38,7 +38,7 @@ $(function () {
   function renderTweets(tweetData) {
     for (let i = 0; i < tweetData.length; i++){
       var $tweetElement = createTweetElement(tweetData[i]);
-      $('#tweetsContainer').append($tweetElement);
+      $('#tweetsContainer').prepend($tweetElement);
     }
   } // end of renderTweets
 
@@ -55,10 +55,10 @@ $(function () {
     event.preventDefault();
 
     if($('form').find('textArea').val().length > 140) {
-      alert('Please do not excess 140 words limit.');
+      sweetAlert('Sorry...' ,'Please do not excess 140 words limit.');
     } else {
-      if ($('form').find('textArea').val().length === 0) {
-        alert('Your input is empty.');
+      if (!$.trim($('textArea').val())) {
+        sweetAlert('sorry...', 'Your input is empty.');
       } else {
           $.ajax({
             url: '/tweets',
@@ -86,6 +86,14 @@ $(function () {
   $('#compose').on('click', function () {
     $(this).closest('#nav-bar').siblings('.container').find('.new-tweet').slideToggle();
     $(this).closest('#nav-bar').siblings('.container').find('.new-tweet form textarea').focus();
+  });
+  $('#nav-bar .logo').on('click', function () {
+    $(this).css('display', 'none');
+    $(this).siblings('#gifLogo').css('display', 'block');
+  });
+  $('#gifLogo').on('click', function () {
+    $(this).css('display', 'none');
+    $(this).siblings('.logo').css('display', 'block');
   });
 
 });// end of whole function

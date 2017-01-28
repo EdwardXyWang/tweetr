@@ -16,6 +16,14 @@
   float: left;
 }
 
+#gifLogo {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  float: left;
+  display: none;
+}
+
 #nav-bar .header {
   margin-left: 10px;
   float: left;

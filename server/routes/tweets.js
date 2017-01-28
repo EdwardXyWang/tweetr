@@ -3,6 +3,7 @@
 const userHelper    = require("../lib/util/user-helper")
 
 const express       = require('express');
+const moment = require('moment-timezone');
 const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
@@ -29,7 +30,8 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: moment.tz("America/Los_Angeles").format()
+      // Date.now()
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
