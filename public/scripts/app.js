@@ -56,6 +56,7 @@ $(function () {
 
     if($('form').find('textArea').val().length > 140) {
       sweetAlert('Sorry...' ,'Please do not excess 140 words limit.');
+      return;
     } else {
       if (!$.trim($('textArea').val())) {
         sweetAlert('sorry...', 'Your input is empty.');

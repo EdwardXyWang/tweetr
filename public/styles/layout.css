@@ -42,6 +42,10 @@ body {
   border-radius: 7px;
 }
 
+#tweetsContainer article header:hover {
+  background-color: #eee;
+}
+
 #tweetsContainer article header {
   padding: 7px;
   height: 33%;
