@@ -42,20 +42,24 @@ $(function () {
     }
   } // end of renderTweets
 
-  $.ajax({
-    url: '/tweets',
-    method: 'GET',
-    success: function (tweetData) {
-      renderTweets(tweetData);
-    }
-  });// end of ajax
+  function ajaxGet() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function (tweetData) {
+        renderTweets(tweetData);
+      }
+    });// end of ajax
+  }
+  ajaxGet();
+
 
   // form validation and submission
   $('form').on('submit', function (event) {
     event.preventDefault();
 
     if($('form').find('textArea').val().length > 140) {
-      sweetAlert('Sorry...' ,'Please do not excess 140 words limit.');
+      sweetAlert('Sorry...' ,'Please do not excess 140 characters limit.');
       return;
     } else {
       if (!$.trim($('textArea').val())) {
@@ -66,13 +70,7 @@ $(function () {
             method: 'post',
             data: $(this).serialize(),
             success: function () {
-                       $.ajax({
-                         url: '/tweets',
-                         method: 'GET',
-                         success: function (tweetData) {
-                                    renderTweets([tweetData[tweetData.length - 1]]);
-                                  }
-                       });// end of ajax
+                       ajaxGet();
                      },
             error: function(error){
               console.log('Please re-input!');
@@ -100,13 +98,3 @@ $(function () {
   });
 
 });// end of whole function
-
-
-
-
-
-
-
-
-
-
